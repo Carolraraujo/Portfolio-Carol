@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carol Rodrigues · Portfólio</title>
+<meta name="description" content="Carol Rodrigues, Product Designer em São Paulo com foco em UX. Pesquisa, design e validação de produtos digitais.">
+<meta property="og:title" content="Carol Rodrigues · Portfólio">
+<meta property="og:description" content="Product Designer há 4 anos com foco em UX. Da pesquisa à interface.">
+<meta property="og:image" content="foto.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23efede8'/><text x='50' y='72' font-family='cursive' font-size='70' fill='%23c76f86' text-anchor='middle'>C</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&family=Shantell+Sans:wght@800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#efede8;
+    --paper-2:#e6e3dc;
+    --card:#f7f5f0;
+    --ink:#1b1b1b;
+    --ink-soft:#4a4844;
+    --muted:#8a867f;
+    --line:#d6d2c9;
+    --rose:#c76f86;
+    --rose-soft:#f1dde2;
+    --tape:rgba(226,214,170,.78);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font:400 15px/1.7 "Poppins", system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  /* leve textura de papel */
+  body::before{
+    content:""; position:fixed; inset:0; pointer-events:none; z-index:100; opacity:.35; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .45 0 0 0 .18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  a{color:inherit;}
+  img{display:block; max-width:100%;}
+  a:focus-visible, button:focus-visible{outline:2px dashed var(--rose); outline-offset:4px;}
+  .hand{font-family:"Caveat", cursive; font-weight:600; line-height:1.1;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  @media (max-width:600px){ .wrap{padding:0 16px;} }
+  section{position:relative; padding:110px 0; border-top:1px solid var(--line);}
+  @media (max-width:600px){ section{padding:80px 0;} }
+
+  /* ---------- Elementos de scrapbook ---------- */
+  .label{
+    display:inline-block; position:relative; background:var(--card); border:1px solid var(--ink);
+    box-shadow:2px 2px 0 var(--ink); padding:3px 12px; font-size:12px; font-weight:500; white-space:nowrap;
+    transform:rotate(var(--r, -2deg)); transition:transform .25s;
+  }
+  .label::before{content:""; position:absolute; left:-5px; top:-5px; width:9px; height:9px; background:var(--rose); border:1px solid var(--ink); border-radius:2px;}
+  .label:hover{transform:rotate(0deg) scale(1.05);}
+  .tape{position:absolute; width:120px; height:30px; background:var(--tape); top:-15px; left:50%; transform:translateX(-50%) rotate(-3deg); box-shadow:0 1px 2px rgba(0,0,0,.06); z-index:3;
+    -webkit-mask:linear-gradient(90deg, transparent 0 3px, #000 3px calc(100% - 3px), transparent 0), repeating-linear-gradient(#000 0 4px, transparent 4px 6px);
+    -webkit-mask-composite:source-over;}
+  .ast{position:absolute; width:90px; height:90px; color:var(--ink); filter:url(#crayon); pointer-events:none;}
+  .ast svg{width:100%; height:100%;}
+  .spin-slow svg{animation:spin 24s linear infinite;}
+  @keyframes spin{ to{transform:rotate(360deg);} }
+
+  /* ---------- Menu ---------- */
+  .nav{position:sticky; top:0; z-index:50; background:rgba(239,237,232,.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav .wrap{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:72px;}
+  .mono-logo{font-family:"Caveat", cursive; font-size:38px; font-weight:700; color:var(--rose); text-decoration:none; line-height:1;}
+  .nav-links{display:flex; gap:8px;}
+  .nav-links a{position:relative; text-decoration:none; font-size:12px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; padding:10px 18px;}
+  .nav-links a svg{position:absolute; inset:-2px -4px; width:calc(100% + 8px); height:calc(100% + 4px); opacity:0; transition:opacity .25s;}
+  .nav-links a svg path{stroke-dasharray:260; stroke-dashoffset:260; transition:stroke-dashoffset .5s ease;}
+  .nav-links a.active svg, .nav-links a:hover svg{opacity:1;}
+  .nav-links a.active svg path, .nav-links a:hover svg path{stroke-dashoffset:0;}
+  .nav-right{justify-self:end; font-size:12px; color:var(--muted);}
+  @media (max-width:640px){ .nav-right{display:none;} .nav .wrap{grid-template-columns:auto 1fr;} .nav-links{justify-self:end; gap:0;} .nav-links a{padding:8px 10px; font-size:11px; letter-spacing:.04em;} }
+
+  /* ---------- Hero / pôster ---------- */
+  .hero{padding:56px 0 64px; border-top:0; overflow:hidden;}
+  .tagline{text-align:center;}
+  .tagline b{display:block; font-size:clamp(14px, 1.5vw, 19px); font-weight:600; letter-spacing:.02em; text-transform:uppercase;}
+  .tagline span{display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); margin-top:4px;}
+  .poster{position:relative; margin:84px auto 0; max-width:1100px; display:grid; grid-template-columns:1fr auto 1fr; grid-template-rows:auto auto; align-items:center; column-gap:clamp(10px, 2vw, 28px);}
+  .big{white-space:nowrap; font-family:"Shantell Sans", cursive; font-weight:800; font-size:clamp(64px, 14vw, 210px); line-height:.92; letter-spacing:-.02em; filter:url(#crayon); color:var(--ink);}
+  .big.l{justify-self:end; text-align:right;}
+  .big.r{justify-self:start;}
+  .big span{display:inline-block; opacity:0; transform:translateY(40px) rotate(var(--rot, 0deg)); animation:drop .8s cubic-bezier(.2,.8,.2,1.2) forwards; animation-delay:calc(var(--i) * 90ms + 200ms);}
+  @keyframes drop{ to{opacity:1; transform:translateY(0) rotate(var(--rot, 0deg));} }
+  .r1{grid-row:1;} .r2{grid-row:2;}
+  .big.r2{margin-top:.16em;}
+
+  .strip{grid-column:2; grid-row:1 / span 2; align-self:center; margin:-40px 0; background:#2a201e; padding:9px 9px 24px; width:clamp(92px, 11vw, 160px); transform:rotate(2.5deg); box-shadow:0 18px 40px rgba(0,0,0,.22); position:relative; z-index:2; animation:slideIn 1s cubic-bezier(.2,.8,.2,1) .1s both;}
+  @keyframes slideIn{ from{opacity:0; transform:translateY(-60px) rotate(-4deg);} }
+  .strip .ph{aspect-ratio:5/4; overflow:hidden; background:#000;}
+  .strip .ph + .ph{margin-top:7px;}
+  .strip img{width:100%; height:100%; object-fit:cover; filter:grayscale(1) sepia(.35) contrast(1.08) brightness(1.02); transition:filter .4s;}
+  .strip:hover img{filter:none;}
+  .strip.solo{width:clamp(130px, 17vw, 240px); padding:10px 10px 34px;}
+  .strip.solo .ph{aspect-ratio:3/4;}
+  .strip.solo .ph img{object-position:50% 30%;}
+  .strip .ph:nth-child(2) img{transform:scale(1.35); object-position:50% 30%;}
+  .strip .ph:nth-child(3) img{transform:scaleX(-1) scale(1.1);}
+  .strip .ph:nth-child(4) img{transform:scale(1.7); object-position:50% 38%;}
+
+  .hello{position:absolute; left:calc(50% - clamp(200px, 25vw, 360px)); top:-58px; font-size:clamp(22px, 2.6vw, 34px); transform:rotate(-6deg); text-align:center; z-index:3;}
+  .intro{position:absolute; right:0; top:58%; font-size:clamp(20px, 2.3vw, 30px); text-align:right; transform:rotate(-3deg); max-width:260px; z-index:3;}
+  .poster .label{position:absolute; z-index:4;}
+  .lb1{left:2%; top:-6%; --r:-4deg;} .lb2{left:0; top:56%; --r:3deg;} .lb3{right:8%; top:0; --r:4deg;} .lb4{right:22%; bottom:-14%; --r:-3deg;}
+  .poster .a1{left:6%; top:24%; width:110px; height:110px;} .poster .a2{right:4%; bottom:-22%; width:96px; height:96px;}
+  .year{text-align:center; font-size:12px; font-weight:500; margin-top:84px; letter-spacing:.1em;}
+  @media (max-width:760px){
+    .poster{grid-template-columns:auto auto; justify-content:center; column-gap:0; margin-top:40px;}
+    .hello{position:static; grid-column:1 / -1; grid-row:1; transform:rotate(-4deg); margin:0 auto 14px;}
+    .big{font-size:20vw;}
+    .big.r2{margin-top:.14em;}
+    .big.l.r1{grid-column:1; grid-row:2;} .big.r.r1{grid-column:2; grid-row:2;}
+    .big.l.r2{grid-column:1; grid-row:3;} .big.r.r2{grid-column:2; grid-row:3;}
+    .strip{grid-column:1 / -1; grid-row:4; justify-self:center; margin:26px 0 0; width:auto; display:flex; gap:6px; padding:7px 7px 7px; transform:rotate(-2deg);}
+    .strip .ph{width:clamp(58px, 18vw, 80px); aspect-ratio:1;}
+    .strip.solo{width:auto; padding:8px 8px 26px;} .strip.solo .ph{width:clamp(150px, 48vw, 200px); aspect-ratio:3/4;}
+    .strip .ph + .ph{margin-top:0;}
+    .intro{position:static; grid-column:1 / -1; grid-row:5; text-align:center; transform:rotate(-2deg); margin:26px auto 0; max-width:none;}
+    .lb1{left:0; top:4%;} .lb2{display:none;} .lb3{right:0; top:4%;} .lb4{right:2%; bottom:-8%;}
+    .poster .a1{width:54px; height:54px; left:-2%; top:44%;} .poster .a2{width:52px; height:52px; right:0; bottom:-12%;}
+    .year{margin-top:64px;}
+  }
+
+  /* ---------- Sobre ---------- */
+  .about .wrap{display:grid; grid-template-columns:1fr 1.05fr; gap:64px; align-items:start;}
+  .about h2{font-size:clamp(38px, 4.4vw, 58px);}
+  .about h2 small{display:block; font-size:.62em; color:var(--ink-soft);}
+  .about p{margin-top:18px; color:var(--ink-soft); max-width:52ch;}
+  .about p:first-of-type{margin-top:28px;}
+  .collage{position:relative; min-height:720px;}
+  .polaroid{position:absolute; right:12%; top:20px; width:min(330px, 70%); background:#fff; padding:12px 12px 44px; box-shadow:0 14px 34px rgba(0,0,0,.14); transform:rotate(3deg); z-index:2;}
+  .polaroid img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 30%;}
+  .polaroid figcaption{position:absolute; bottom:8px; left:0; right:0; text-align:center; font-family:"Caveat", cursive; font-size:24px; font-weight:600;}
+  .name-arrow{position:absolute; left:6%; top:70px; font-size:30px; transform:rotate(-8deg); display:flex; align-items:center; gap:4px;}
+  .name-arrow svg{width:60px; height:40px;}
+  .stamp{position:absolute; width:94px; padding:7px; background:#fbfaf6; z-index:3;
+    -webkit-mask:radial-gradient(circle 4px at 5px 5px, transparent 98%, #000) -5px -5px / 10px 10px, linear-gradient(#000 0 0) content-box;
+    -webkit-mask-composite:source-over; mask-composite:add; box-shadow:0 4px 10px rgba(0,0,0,.08);}
+  .stamp div{aspect-ratio:4/5; display:grid; place-items:center; text-align:center; color:#fff; font-family:"Caveat", cursive; font-size:21px; font-weight:700; line-height:1;}
+  .stamp.s1{right:2%; top:300px; transform:rotate(8deg);} .stamp.s1 div{background:#7d93b2;}
+  .stamp.s2{right:3%; top:420px; transform:rotate(-6deg);} .stamp.s2 div{background:#b48f7b;}
+  .lace{position:absolute; left:0; bottom:0; width:min(380px, 90%); padding:12px; transform:rotate(-4deg); z-index:4;
+    background:radial-gradient(circle, #f4ecdc 55%, transparent 58%) 0 0 / 14px 14px; filter:drop-shadow(0 8px 18px rgba(0,0,0,.12));}
+  .lace div{background:#f6efe0; border-radius:46% / 40%; padding:44px 46px; outline:1.5px dashed #d9c9a8; outline-offset:-10px; font-family:"Caveat", cursive; font-size:24px; font-weight:600; line-height:1.25; text-align:center;}
+  .about .a3{left:-30px; bottom:150px; width:70px; height:70px;}
+  @media (max-width:900px){
+    .about .wrap{grid-template-columns:1fr; gap:40px;}
+    .collage{min-height:0; display:flex; flex-direction:column; align-items:center; padding-top:30px;}
+    .polaroid, .lace{position:relative; left:auto; right:auto; top:auto; bottom:auto;}
+    .polaroid{width:min(300px, 78%);}
+    .lace{margin-top:-6px; width:min(380px, 96%);}
+    .lace div{padding:34px 30px; font-size:22px;}
+    .name-arrow{left:0; top:0;}
+    .stamp.s1{right:0; top:170px; width:76px;} .stamp.s2, .about .a3{display:none;}
+  }
+
+  /* ---------- Pasta de experiência ---------- */
+  .folder{position:relative; margin-top:28px;}
+  .folder-tab{display:inline-block; position:relative; top:1.5px; background:var(--paper-2); border:1.5px solid var(--ink); border-bottom:0; border-radius:10px 10px 0 0; padding:10px 26px 8px; font-weight:600; font-size:14px; letter-spacing:.06em; text-transform:uppercase;}
+  .folder-body{background:var(--paper-2); border:1.5px solid var(--ink); border-radius:0 12px 12px 12px; padding:48px 40px; display:grid; grid-template-columns:1fr 1fr 0.95fr; gap:40px; box-shadow:6px 6px 0 rgba(27,27,27,.08);}
+  .folder-body .label{margin-bottom:16px;}
+  .item{font-size:13.5px; margin-bottom:16px;}
+  .item b{font-weight:600;}
+  .item span{color:var(--ink-soft);}
+  .skills{columns:2; column-gap:20px; font-size:13px; color:var(--ink-soft); list-style:none;}
+  .skills li{break-inside:avoid; margin-bottom:4px;}
+  .notebook{position:relative; background:repeating-linear-gradient(#fbfaf5 0 27px, #cad7e2 27px 28px); padding:44px 22px 28px 46px; transform:rotate(2deg); box-shadow:0 10px 24px rgba(0,0,0,.1); align-self:start;}
+  .notebook::before{content:""; position:absolute; left:30px; top:0; bottom:0; width:1.5px; background:#e3a3a3;}
+  .notebook::after{content:""; position:absolute; left:8px; top:18px; bottom:18px; width:12px; background:radial-gradient(circle 5px, var(--paper-2) 98%, transparent) 0 0 / 12px 34px;}
+  .notebook h4{font-family:"Caveat", cursive; font-size:30px; font-weight:700; line-height:28px; margin-bottom:0;}
+  .notebook li{list-style:none; font-family:"Caveat", cursive; font-size:21px; font-weight:500; line-height:28px;}
+  .notebook .clip{position:absolute; right:22px; top:-22px; width:30px; height:70px; color:#9a9a9a;}
+  .ticket{display:inline-flex; flex-direction:column; align-items:center; margin-top:28px; padding:16px 26px; background:#d9dccd; border-radius:8px; text-decoration:none; transform:rotate(-3deg); box-shadow:0 6px 14px rgba(0,0,0,.08); position:relative;
+    -webkit-mask:radial-gradient(circle 8px at 0 50%, transparent 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 8px at 100% 50%, transparent 98%, #000) right / 51% 100% no-repeat;}
+  .ticket b{font-size:15px; font-weight:600; border:1.5px solid var(--ink); border-radius:999px; padding:4px 16px;}
+  .ticket span{font-size:12px; margin-top:6px; text-decoration:underline;}
+  @media (max-width:980px){ .folder-body{grid-template-columns:1fr 1fr;} .notebook{grid-column:1 / -1; max-width:420px;} }
+  @media (max-width:640px){ .folder-body{grid-template-columns:1fr; padding:36px 22px;} }
+
+  /* ---------- Títulos à mão ---------- */
+  .hand-title{font-size:clamp(34px, 4vw, 50px); display:flex; align-items:center; gap:12px;}
+  .hand-title svg{width:34px; height:44px;}
+
+  /* ---------- Carrosséis ---------- */
+  @keyframes marquee{ to{transform:translateX(-50%);} }
+  .logos{overflow:hidden; margin-top:40px; -webkit-mask-image:linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image:linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); padding:8px 0;}
+  .logos-track{display:flex; width:max-content; animation:marquee 80s linear infinite;}
+  .logos:hover .logos-track{animation-play-state:paused;}
+  .tool{display:inline-flex; align-items:center; gap:12px; margin-right:18px; white-space:nowrap; position:relative;
+    padding:10px 22px 10px 14px; background:var(--card); border:1px solid var(--ink); box-shadow:2px 2px 0 var(--ink); font-size:15px; font-weight:500;}
+  .tool:nth-child(odd){transform:rotate(-1.5deg);} .tool:nth-child(even){transform:rotate(1.5deg);}
+  .tool img, .tool .mono{width:24px; height:24px; object-fit:contain; filter:grayscale(1) contrast(1.1);}
+  .tool .mono{display:grid; place-items:center; border-radius:6px; background:#2a2a2a; color:#fff; font-size:13px; font-weight:600;}
+  .clients .logos-track{animation-duration:45s;}
+  .client{display:inline-flex; align-items:center; justify-content:center; gap:10px; margin-right:18px; width:200px; height:104px; background:var(--card); border:1px solid var(--ink); box-shadow:3px 3px 0 var(--ink); position:relative;}
+  .client:nth-child(odd){transform:rotate(-1.2deg);} .client:nth-child(even){transform:rotate(1.2deg);}
+  .client img{max-width:130px; max-height:52px; filter:grayscale(1) contrast(1.1); opacity:.8;}
+  .client b{font-size:22px; font-weight:600; color:#555;}
+  @media (max-width:600px){ .client{width:160px; height:88px;} .client img{max-width:100px; max-height:40px;} }
+
+  /* ---------- Cases ---------- */
+  .case{display:grid; grid-template-columns:1fr 1.35fr; gap:56px; align-items:center; padding:64px 0; border-bottom:1px dashed var(--line);}
+  .case:last-child{border-bottom:0;}
+  .case-text{text-align:center; padding:0 12px;}
+  .case-tags{font-size:12px; color:var(--ink-soft);}
+  .case-text h3{font-size:clamp(26px, 3vw, 40px); font-weight:700; text-transform:uppercase; letter-spacing:-.01em; line-height:1.05; margin-top:6px;}
+  .case-text p{margin:14px auto 0; max-width:40ch; font-size:14.5px;}
+  .case-text .badge{display:inline-block; margin-top:12px; font-family:"Caveat", cursive; font-size:22px; font-weight:700; color:var(--rose); transform:rotate(-4deg);}
+  .btn-case{position:relative; margin-top:20px; cursor:pointer; font:500 13.5px "Poppins", sans-serif; background:var(--card); color:var(--ink); border:1px solid var(--ink); box-shadow:2px 2px 0 var(--ink); padding:7px 18px; transition:transform .15s, box-shadow .15s;}
+  .btn-case::before{content:""; position:absolute; left:-5px; top:-5px; width:9px; height:9px; background:var(--rose); border:1px solid var(--ink); border-radius:2px;}
+  .btn-case:hover{transform:translate(-1px,-1px); box-shadow:4px 4px 0 var(--ink);}
+  .board{position:relative; background:#d8d5cf; aspect-ratio:16/10; display:grid; place-items:center; padding:36px; box-shadow:0 12px 30px rgba(0,0,0,.08);}
+  .board .ast{width:60px; height:60px; color:#fbfaf6; filter:none;}
+  .board .b1{left:4%; top:8%;} .board .b2{right:5%; bottom:9%;}
+  .board .clip{position:absolute; right:30px; top:-26px; width:30px; height:74px; color:#8f8f8f; z-index:3;}
+  .index-card{position:relative; width:min(420px, 100%); background:repeating-linear-gradient(#fff 0 29px, #cbd8e4 29px 30px); background-position:0 34px; padding:12px 26px 22px 40px; transform:rotate(var(--r, -2deg)); box-shadow:0 10px 24px rgba(0,0,0,.12); transition:transform .4s;}
+  .index-card::before{content:""; position:absolute; left:26px; top:0; bottom:0; width:1.5px; background:#e4a6a6;}
+  .case:hover .index-card{transform:rotate(0deg) scale(1.02);}
+  .index-card h4{font-family:"Caveat", cursive; font-size:28px; font-weight:700; line-height:30px; color:var(--rose);}
+  .index-card li{list-style:none; font-family:"Caveat", cursive; font-size:22px; font-weight:500; line-height:30px;}
+  .index-card li::before{content:"✓ "; color:var(--rose);}
+  @media (max-width:860px){ .case{grid-template-columns:1fr; gap:36px; padding:48px 0;} .board{padding:28px 18px;} }
+
+  /* ---------- Modal do case ---------- */
+  dialog{border:1.5px solid var(--ink); padding:0; border-radius:6px; width:min(760px, calc(100vw - 32px)); max-height:calc(100vh - 48px); margin:auto; color:var(--ink); background:var(--card); box-shadow:8px 8px 0 var(--ink);}
+  dialog::backdrop{background:rgba(30,26,22,.45); backdrop-filter:blur(3px);}
+  .dlg-head{padding:44px 44px 30px; position:relative; border-bottom:1px dashed var(--line);}
+  .dlg-head .client{all:unset; display:inline-block; position:relative; background:#fff; border:1px solid var(--ink); box-shadow:2px 2px 0 var(--ink); padding:2px 12px; font-size:12px; font-weight:500; transform:rotate(-2deg);}
+  .dlg-head h3{font-size:clamp(24px, 3.4vw, 34px); font-weight:700; text-transform:uppercase; line-height:1.1; margin-top:16px; max-width:24ch;}
+  .dlg-close{position:absolute; top:16px; right:16px; width:38px; height:38px; border-radius:50%; cursor:pointer; background:#fff; color:var(--ink); border:1px solid var(--ink); font-size:22px; line-height:1;}
+  .dlg-close:hover{background:var(--rose); color:#fff;}
+  .dlg-body{padding:30px 44px 40px;}
+  .dlg-body .blk + .blk{margin-top:26px;}
+  .dlg-body .lbl{font-family:"Caveat", cursive; font-size:26px; font-weight:700; color:var(--rose); line-height:1; margin-bottom:8px;}
+  .dlg-body p, .dlg-body li{color:var(--ink-soft); font-size:14.5px;}
+  .dlg-body ol, .dlg-body ul{padding-left:20px;}
+  .dlg-body li + li{margin-top:8px;}
+  .dlg-body li strong{color:var(--ink); font-weight:600;}
+  .dlg-body .chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .dlg-body .chips span{font-size:12.5px; padding:4px 12px; border:1px solid var(--ink); background:#fff; font-weight:500;}
+  .nda{margin-top:30px; padding-top:18px; border-top:1px dashed var(--line); font-size:12.5px; color:var(--muted);}
+  @media (max-width:600px){ .dlg-head{padding:56px 22px 24px;} .dlg-body{padding:24px 22px 32px;} }
+
+  /* ---------- Contato ---------- */
+  .contact{text-align:center; padding-bottom:90px;}
+  .contact .hand-title{justify-content:center;}
+  .planner-wrap{position:relative; display:inline-block; margin-top:56px;}
+  .planner-tab{position:absolute; left:50%; top:-26px; transform:translateX(-50%) rotate(-2deg); z-index:3; background:var(--card); border:1px solid var(--ink); box-shadow:2px 2px 0 var(--ink); padding:8px 22px; font-weight:600; font-size:13px; letter-spacing:.06em; text-transform:uppercase; text-decoration:none; transition:transform .2s;}
+  .planner-tab:hover{transform:translateX(-50%) rotate(0) translateY(-3px);}
+  .planner{position:relative; width:min(400px, 86vw); aspect-ratio:4/5; border-radius:16px 22px 22px 16px; transform:rotate(-2deg);
+    background:radial-gradient(circle at 30% 20%, #3b3a37, #262523 70%); box-shadow:0 24px 50px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.04);
+    display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center; padding:30px 28px;}
+  .planner::before{content:""; position:absolute; inset:0; border-radius:inherit; opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");}
+  .planner .strip{grid-column:auto; grid-row:auto; margin:0; display:block; width:clamp(110px, 26vw, 150px); padding:8px 8px 24px; transform:rotate(-3deg); animation:none;}
+  .planner .strip.solo .ph{width:auto; aspect-ratio:3/4;}
+  .planner .note{position:relative; justify-self:start; background:repeating-linear-gradient(#fdfcf7 0 25px, #cad7e2 25px 26px); padding:20px 18px 18px 26px; transform:rotate(3deg); box-shadow:0 6px 14px rgba(0,0,0,.25);}
+  .planner .note::before{content:""; position:absolute; left:6px; top:10px; bottom:10px; width:8px; background:radial-gradient(circle 3px, #262523 98%, transparent) 0 0 / 8px 16px;}
+  .planner .note span{font-family:"Caveat", cursive; font-size:clamp(28px, 6vw, 40px); font-weight:700; line-height:1;}
+  .planner .monogram{position:absolute; right:22px; bottom:16px; font-family:"Caveat", cursive; font-size:64px; font-weight:700; color:#d79aaa; line-height:1; transform:rotate(-8deg);
+    text-shadow:1px 1px 0 #b77486, -1px -1px 0 #e9b9c6;}
+  .contact .links{margin-top:44px; font-size:14px;}
+  .contact .links a{font-weight:600;}
+  .contact .ast{width:76px; height:76px;}
+  .contact .a4{left:6%; bottom:60px;} .contact .a5{right:7%; top:140px;}
+
+  footer{border-top:1px solid var(--line); padding:24px 0; font-size:12px; color:var(--ink-soft);}
+  footer .wrap{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px;}
+  footer .r{justify-self:end;}
+  footer svg{width:26px; height:26px; filter:url(#crayon);}
+  @media (max-width:600px){ footer .wrap{grid-template-columns:1fr; justify-items:center; text-align:center;} footer .r{justify-self:center;} }
+
+  /* ---------- Entrada suave ---------- */
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+    .big span{opacity:1; transform:rotate(var(--rot, 0deg));}
+    .reveal{opacity:1; transform:none;}
+    .logos{overflow-x:auto;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Filtro de "giz de cera" e desenhos reutilizáveis -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="crayon" x="-5%" y="-5%" width="110%" height="110%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="3" result="warp"/>
+    <feDisplacementMap in="SourceGraphic" in2="warp" scale="6" result="rough"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="2" seed="8" result="grain"/>
+    <feColorMatrix in="grain" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -0.9 1.35" result="grainA"/>
+    <feComposite in="rough" in2="grainA" operator="in"/>
+  </filter>
+  <symbol id="asterisk" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"><path d="M50 8 Q52 50 49 92"/><path d="M12 30 Q50 52 88 70"/><path d="M14 72 Q48 48 86 28"/><path d="M28 12 Q50 50 70 90"/><path d="M72 10 Q52 52 30 88"/></g></symbol>
+  <symbol id="sparkle" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"><path d="M50 10 L50 90"/><path d="M10 50 L90 50"/><path d="M22 22 L78 78"/><path d="M78 22 L22 78"/></g></symbol>
+  <symbol id="ellipse" viewBox="0 0 120 44" preserveAspectRatio="none"><path d="M60 3 C 100 2, 118 12, 116 24 C 113 38, 70 42, 50 41 C 22 40, 3 33, 4 21 C 6 9, 34 3, 66 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></symbol>
+  <symbol id="clip" viewBox="0 0 30 74"><path d="M20 22 V58 a6 6 0 0 1 -12 0 V12 a9 9 0 0 1 18 0 V60 a12 12 0 0 1 -24 0 V24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="arrow-down" viewBox="0 0 34 44"><path d="M17 3 C 15 15, 19 26, 17 39 M7 29 C 11 33, 14 37, 17 40 C 20 36, 24 32, 28 28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a href="#topo" class="mono-logo" aria-label="Início">C</a>
+    <div class="nav-links">
+      <a href="#trabalhos"><svg aria-hidden="true"><use href="#ellipse"/></svg>Trabalhos</a>
+      <a href="#sobre"><svg aria-hidden="true"><use href="#ellipse"/></svg>Sobre</a>
+      <a href="#contato"><svg aria-hidden="true"><use href="#ellipse"/></svg>Contato</a>
+    </div>
+    <span class="nav-right">São Paulo · BR</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="topo">
+  <div class="wrap">
+    <div class="tagline">
+      <b>Transformando pesquisa em experiências.</b>
+      <span>UX/UI &amp; Product Designer</span>
+    </div>
+
+    <div class="poster">
+      <span class="label lb1">UX Research</span>
+      <span class="label lb2">UI Design</span>
+      <span class="label lb3">Product Design</span>
+      <span class="label lb4">Testes de usabilidade</span>
+      <span class="ast a1 spin-slow" aria-hidden="true"><svg><use href="#asterisk"/></svg></span>
+      <span class="ast a2" aria-hidden="true"><svg><use href="#asterisk"/></svg></span>
+
+      <p class="hello hand">boas-vindas<br>ao meu</p>
+
+      <h1 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Portfólio de Carol Rodrigues</h1>
+      <div class="big l r1" aria-hidden="true"><span style="--i:0;--rot:-4deg">P</span></div>
+      <div class="big r r1" aria-hidden="true"><span style="--i:1;--rot:3deg">O</span><span style="--i:2;--rot:-2deg">R</span><span style="--i:3;--rot:4deg">T</span></div>
+      <div class="big l r2" aria-hidden="true"><span style="--i:4;--rot:-3deg">F</span><span style="--i:5;--rot:2deg">Ó</span><span style="--i:6;--rot:-5deg">L</span></div>
+      <div class="big r r2" aria-hidden="true"><span style="--i:7;--rot:3deg">I</span><span style="--i:8;--rot:-2deg">O</span></div>
+
+      <div class="strip solo" aria-hidden="true">
+        <div class="ph"><img src="foto.jpg" alt=""></div>
+      </div>
+
+      <p class="intro hand">Eu sou a Carol,<br>Product Designer<br>há 4 anos, com<br>foco em UX ✦ SP</p>
+    </div>
+
+    <p class="year">2026</p>
+  </div>
+</header>
+
+<!-- SOBRE -->
+<section class="about" id="sobre">
+  <div class="wrap">
+    <div class="reveal">
+      <h2 class="hand">prazer em te conhecer!</h2>
+      <p>Sou a Carol, tenho 25 anos e moro em São Paulo.</p>
+      <p>O UX entrou na minha vida de um jeito natural. Sempre fui aquela pessoa que repara quando algo não funciona e já fica pensando em como melhorar. Ao longo da minha trajetória, isso virou propósito: entender o quanto uma boa experiência faz diferença na vida das pessoas.</p>
+      <p>Hoje, com 4 anos de experiência, trabalho entre pesquisa e design. Vou de entrevistas, diários de uso e testes de usabilidade ao desenho de fluxos e telas, e uso IA para ganhar agilidade no processo.</p>
+    </div>
+
+    <div class="collage reveal" aria-hidden="true">
+      <span class="name-arrow hand">Carol<svg viewBox="0 0 60 40"><path d="M4 30 C 20 26, 36 18, 54 8 M42 6 L55 7 L50 19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+      <figure class="polaroid">
+        <span class="tape"></span>
+        <img src="foto-sobre.jpg" alt="">
+        <figcaption>São Paulo, 2026</figcaption>
+      </figure>
+      <div class="stamp s1"><div>São<br>Paulo</div></div>
+      <div class="stamp s2"><div>UX<br>✦</div></div>
+      <div class="lace"><div>Sou movida pela curiosidade e pelo aprendizado contínuo, sempre buscando criar experiências que façam sentido para os usuários.</div></div>
+      <span class="ast a3" aria-hidden="true"><svg><use href="#asterisk"/></svg></span>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIÊNCIA -->
+<section id="experiencia" style="border-top:0; padding-top:20px;">
+  <div class="wrap">
+    <div class="folder reveal">
+      <span class="folder-tab">Experiência</span>
+      <div class="folder-body">
+        <div>
+          <span class="label" style="--r:-2deg">Formação</span>
+          <p class="item"><b>Uninassau</b> <span>| 2023 – 2025</span><br><span>CST em Experiência do Usuário e Modelagem de Projetos Inovadores</span></p>
+          <span class="label" style="--r:2deg">Cursos</span>
+          <p class="item"><span>HXconf® 2022 · UX Design para Todos<br>Digitalks 2024 · UI Boost Design</span></p>
+          <span class="label" style="--r:-1deg">Habilidades</span>
+          <ul class="skills">
+            <li>UI Design</li><li>Fluxos de usuário</li><li>Wireframing</li><li>Prototipação</li><li>Redesign de produtos</li>
+            <li>Testes de usabilidade</li><li>Diários de uso</li><li>Focus groups</li><li>Benchmarking</li><li>Síntese de insights</li>
+            <li>Relatórios de pesquisa</li><li>IA para pesquisa</li>
+          </ul>
+        </div>
+        <div>
+          <span class="label" style="--r:2deg">Experiência profissional</span>
+          <p class="item"><b>Try Consultoria</b> <span>| 2025 – atual</span><br><span>UX Designer</span></p>
+          <p class="item"><b>Try Consultoria</b> <span>| 2023 – 2025</span><br><span>Estágio UX Designer</span></p>
+          <p class="item"><b>erural</b> <span>| 2022 – 2023</span><br><span>Estágio UX/UI Designer</span></p>
+          <a class="ticket" href="https://www.linkedin.com/in/anacarolineuxui/" target="_blank" rel="noopener"><b>LinkedIn</b><span>ver trajetória completa ↗</span></a>
+        </div>
+        <div class="notebook">
+          <svg class="clip" aria-hidden="true"><use href="#clip"/></svg>
+          <h4>Metodologias</h4>
+          <ul>
+            <li>entrevistas em profundidade</li>
+            <li>diary study</li>
+            <li>benchmarking</li>
+            <li>survey &amp; focus group</li>
+            <li>JTBD, personas, jornadas</li>
+            <li>wireframes &amp; protótipos</li>
+            <li>arquitetura da informação</li>
+            <li>teste de usabilidade &amp; A/B</li>
+            <li>avaliação heurística</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="hand hand-title reveal" style="margin-top:96px; justify-content:center;">ferramentas do dia a dia <svg aria-hidden="true"><use href="#arrow-down"/></svg></h2>
+    <div class="logos reveal"><div class="logos-track"><span class="tool"><img src="https://cdn.simpleicons.org/figma" alt="" width="28" height="28" loading="lazy">Figma</span><span class="tool"><img src="https://cdn.simpleicons.org/figma" alt="" width="28" height="28" loading="lazy">Figma AI</span><span class="tool"><img src="https://cdn.simpleicons.org/figma" alt="" width="28" height="28" loading="lazy">FigJam</span><span class="tool"><img src="https://cdn.simpleicons.org/maze" alt="" width="28" height="28" loading="lazy">Maze</span><span class="tool"><img src="https://cdn.simpleicons.org/googleforms" alt="" width="28" height="28" loading="lazy">Google Forms</span><span class="tool"><span class="mono">R</span>Respondent</span><span class="tool"><img src="https://cdn.simpleicons.org/notion" alt="" width="28" height="28" loading="lazy">Notion</span><span class="tool"><img src="https://cdn.simpleicons.org/miro" alt="" width="28" height="28" loading="lazy">Miro</span><span class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="" width="28" height="28" loading="lazy">Slack</span><span class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/ChatGPT-Logo.svg" alt="" width="28" height="28" loading="lazy">ChatGPT</span><span class="tool"><img src="https://cdn.simpleicons.org/claude" alt="" width="28" height="28" loading="lazy">Claude</span><span class="tool"><img src="https://cdn.simpleicons.org/googlegemini" alt="" width="28" height="28" loading="lazy">Gemini</span><span class="tool"><img src="https://cdn.simpleicons.org/notebooklm" alt="" width="28" height="28" loading="lazy">NotebookLM</span><span class="tool"><img src="https://cdn.simpleicons.org/figma" alt="" width="28" height="28" loading="lazy">Figma</span><span class="tool"><img src="https://cdn.simpleicons.org/figma" alt="" width="28" height="28" loading="lazy">Figma AI</span><span class="tool"><img src="https://cdn.simpleicons.org/figma" alt="" width="28" height="28" loading="lazy">FigJam</span><span class="tool"><img src="https://cdn.simpleicons.org/maze" alt="" width="28" height="28" loading="lazy">Maze</span><span class="tool"><img src="https://cdn.simpleicons.org/googleforms" alt="" width="28" height="28" loading="lazy">Google Forms</span><span class="tool"><span class="mono">R</span>Respondent</span><span class="tool"><img src="https://cdn.simpleicons.org/notion" alt="" width="28" height="28" loading="lazy">Notion</span><span class="tool"><img src="https://cdn.simpleicons.org/miro" alt="" width="28" height="28" loading="lazy">Miro</span><span class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" alt="" width="28" height="28" loading="lazy">Slack</span><span class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/ChatGPT-Logo.svg" alt="" width="28" height="28" loading="lazy">ChatGPT</span><span class="tool"><img src="https://cdn.simpleicons.org/claude" alt="" width="28" height="28" loading="lazy">Claude</span><span class="tool"><img src="https://cdn.simpleicons.org/googlegemini" alt="" width="28" height="28" loading="lazy">Gemini</span><span class="tool"><img src="https://cdn.simpleicons.org/notebooklm" alt="" width="28" height="28" loading="lazy">NotebookLM</span></div></div>
+  </div>
+</section>
+
+<!-- TRABALHOS -->
+<section id="trabalhos">
+  <div class="wrap">
+    <h2 class="hand hand-title reveal">o que eu faço <svg aria-hidden="true"><use href="#arrow-down"/></svg></h2>
+
+    <div class="cases">
+      <article class="case reveal">
+        <div class="case-text">
+          <span class="case-tags">Pesquisa, Benchmarking + Design de fluxos</span>
+          <h3>Claro Flex Turista</h3>
+          <p>Adaptação da jornada do Claro Flex para turistas estrangeiros, com planos temporários via eSIM. Do benchmark ao desenho das telas e aos testes de usabilidade.</p>
+          <span class="badge">produto no ar! ✦</span>
+          <div><button type="button" class="btn-case" data-open="d-claro">Ver case</button></div>
+        </div>
+        <div class="board">
+          <svg class="clip" aria-hidden="true"><use href="#clip"/></svg>
+          <span class="ast b1" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <span class="ast b2" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <div class="index-card" style="--r:-2deg"><h4>o que eu fiz:</h4><ul><li>Desenho dos fluxos e telas, com o time</li><li>Benchmark de operadoras</li><li>Roteiro e screener dos testes</li><li>Apoio na condução dos testes</li><li>Relatório final</li></ul></div>
+        </div>
+      </article>
+      <article class="case reveal">
+        <div class="case-text">
+          <span class="case-tags">Diary study + Pesquisa remota</span>
+          <h3>Criadores de vídeo</h3>
+          <p>Diário de uso internacional sobre o comportamento de criadores de vídeos curtos, com atuação na frente brasileira do projeto.</p>
+          <div><button type="button" class="btn-case" data-open="d-video">Ver case</button></div>
+        </div>
+        <div class="board">
+          <span class="tape"></span>
+          <span class="ast b1" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <span class="ast b2" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <div class="index-card" style="--r:2deg"><h4>o que eu fiz:</h4><ul><li>Roteiro do diário de uso</li><li>Envio de formulários e tarefas</li><li>Controle de recebimento dos diários</li><li>Corte de vídeos</li><li>Anonimização dos materiais</li></ul></div>
+        </div>
+      </article>
+      <article class="case reveal">
+        <div class="case-text">
+          <span class="case-tags">Entrevistas, Benchmarking + Protótipos</span>
+          <h3>Experiência digital de RH</h3>
+          <p>Pesquisa e benchmarking de como empresas organizam serviços de RH para seus colaboradores, materializados em protótipos para uma fintech de grande porte.</p>
+          <div><button type="button" class="btn-case" data-open="d-rh">Ver case</button></div>
+        </div>
+        <div class="board">
+          <svg class="clip" aria-hidden="true"><use href="#clip"/></svg>
+          <span class="ast b1" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <span class="ast b2" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <div class="index-card" style="--r:-1.5deg"><h4>o que eu fiz:</h4><ul><li>Tabulação das entrevistas</li><li>Benchmarking da experiência de RH</li><li>Achados materializados em protótipos</li></ul></div>
+        </div>
+      </article>
+      <article class="case reveal">
+        <div class="case-text">
+          <span class="case-tags">Benchmarking + Jornada de compra</span>
+          <h3>Marketplace & fidelidade</h3>
+          <p>Benchmarking de players do mercado financeiro, com mapeamento da jornada de compra e relatório executivo para uma fintech de grande porte.</p>
+          <div><button type="button" class="btn-case" data-open="d-market">Ver case</button></div>
+        </div>
+        <div class="board">
+          <span class="tape"></span>
+          <span class="ast b1" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <span class="ast b2" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <div class="index-card" style="--r:2.5deg"><h4>o que eu fiz:</h4><ul><li>Benchmarking de marketplaces</li><li>Mapeamento da jornada de compra</li><li>Relatório final com recomendações</li></ul></div>
+        </div>
+      </article>
+      <article class="case reveal">
+        <div class="case-text">
+          <span class="case-tags">Teste de usabilidade + Relatório</span>
+          <h3>Redesign de app telecom</h3>
+          <p>Teste de usabilidade moderado para validar o redesign completo de um app de operadora antes do lançamento.</p>
+          <div><button type="button" class="btn-case" data-open="d-telecom">Ver case</button></div>
+        </div>
+        <div class="board">
+          <svg class="clip" aria-hidden="true"><use href="#clip"/></svg>
+          <span class="ast b1" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <span class="ast b2" aria-hidden="true"><svg><use href="#sparkle"/></svg></span>
+          <div class="index-card" style="--r:-2deg"><h4>o que eu fiz:</h4><ul><li>Apoio ao moderador nos testes</li><li>Tabulação dos resultados</li><li>Relatório de entrega</li></ul></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section class="clients" id="clientes">
+  <div class="wrap">
+    <h2 class="hand hand-title reveal" style="justify-content:center;">marcas com quem já trabalhei</h2>
+    <div class="logos reveal"><div class="logos-track"><span class="client" title="Itaú"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banco_Ita%C3%BA_logo.svg" alt="Itaú" loading="lazy"></span><span class="client" title="Sebrae"><img src="logos/sebrae.png" alt="Sebrae" loading="lazy"></span><span class="client" title="Claro"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Claro_logo_%282017%29.svg" alt="Claro" loading="lazy"></span><span class="client" title="99"><img src="logos/99.png" alt="99" loading="lazy"></span><span class="client" title="CCR"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Grupo_CCR_-_Logo.svg" alt="CCR" loading="lazy"><b>CCR</b></span><span class="client" title="Nubank"><img src="https://cdn.simpleicons.org/nubank" alt="Nubank" loading="lazy"></span><span class="client" title="Bradesco"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banco_Bradesco_logo.svg" alt="Bradesco" loading="lazy"></span><span class="client" title="Vibra"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Logotipo_da_Vibra_Energia.svg" alt="Vibra" loading="lazy"></span><span class="client" title="Itaú"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banco_Ita%C3%BA_logo.svg" alt="Itaú" loading="lazy"></span><span class="client" title="Sebrae"><img src="logos/sebrae.png" alt="Sebrae" loading="lazy"></span><span class="client" title="Claro"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Claro_logo_%282017%29.svg" alt="Claro" loading="lazy"></span><span class="client" title="99"><img src="logos/99.png" alt="99" loading="lazy"></span><span class="client" title="CCR"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Grupo_CCR_-_Logo.svg" alt="CCR" loading="lazy"><b>CCR</b></span><span class="client" title="Nubank"><img src="https://cdn.simpleicons.org/nubank" alt="Nubank" loading="lazy"></span><span class="client" title="Bradesco"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banco_Bradesco_logo.svg" alt="Bradesco" loading="lazy"></span><span class="client" title="Vibra"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Logotipo_da_Vibra_Energia.svg" alt="Vibra" loading="lazy"></span></div></div>
+  </div>
+</section>
+
+<!-- DETALHES DOS CASES -->
+<dialog id="d-claro" aria-labelledby="d-claro-t">
+  <div class="dlg-head">
+    <button class="dlg-close" type="button" aria-label="Fechar">×</button>
+    <div class="client">Claro · No ar</div>
+    <h3 class="display" id="d-claro-t">Design e teste de usabilidade do Claro Flex Turista</h3>
+  </div>
+  <div class="dlg-body">
+    <div class="blk"><div class="lbl">Contexto</div><p>A Claro identificou a oportunidade de criar um produto digital específico para turistas estrangeiros visitando o Brasil (com o volume aumentado por eventos como a COP30), oferecendo planos temporários via eSIM baseados na estrutura do Claro Flex original. Fizemos parte do projeto desde a concepção da nova jornada até a validação com usuários reais antes do lançamento.</p></div>
+    <div class="blk"><div class="lbl">Meu papel</div><p>Desenhei, junto com o time, os fluxos e telas da nova jornada do Claro Flex Turista, com base em um benchmark de operadoras nacionais e internacionais que ajudou a mapear os padrões de experiência já familiares para turistas estrangeiros. Também construí, em conjunto com o time, o roteiro de teste, o screener de recrutamento e o relatório final entregue ao cliente.</p></div>
+    <div class="blk"><div class="lbl">Processo</div><ol>
+      <li><strong>Benchmark e mapeamento comparativo:</strong> comparação entre a jornada do Claro Flex original e o que precisaria ser adaptado, somada a um benchmark de operadoras nacionais e internacionais.</li>
+      <li><strong>Design dos fluxos e telas:</strong> a partir das premissas de negócio (login por passaporte, planos de 30/60/90 dias, ativação apenas via eSIM) e dos padrões do benchmark, desenho da nova jornada de aquisição.</li>
+      <li><strong>Recrutamento:</strong> screener para captar turistas com e sem experiência prévia com eSIM, via plataforma internacional especializada (Respondent).</li>
+      <li><strong>Roteiro do teste:</strong> perguntas exploratórias sobre decisão de operadora em viagens, seguidas de 4 tarefas cobrindo a jornada completa.</li>
+      <li><strong>Execução e análise:</strong> 6 sessões de teste remoto, tabulação das entrevistas e construção conjunta do relatório, cruzando achados com dados de mercado.</li>
+    </ol></div>
+    <div class="blk"><div class="lbl">Metodologia aplicada</div><div class="chips"><span>Benchmark para embasar design</span><span>Walkthrough comparativo</span><span>Recrutamento internacional</span><span>Pesquisa exploratória + usabilidade</span><span>Iteração assistida por protótipo</span><span>Cruzamento com dados de mercado</span></div></div>
+    <div class="blk"><div class="lbl">Resultado</div><p>Identificação de pontos de fricção na compreensão do funcionamento dos planos (especialmente a lógica de renovação automática), levando a ajustes no design das telas de planos e a uma recomendação de produto para cenários de viagens curtas. A jornada foi ao ar.</p></div>
+    <div class="nda">🔒 Dados de participantes anonimizados por confidencialidade.</div>
+  </div>
+</dialog>
+
+<dialog id="d-video" aria-labelledby="d-video-t">
+  <div class="dlg-head">
+    <button class="dlg-close" type="button" aria-label="Fechar">×</button>
+    <div class="client">Plataforma global de vídeo</div>
+    <h3 class="display" id="d-video-t">Comportamento de criadores de vídeos curtos</h3>
+  </div>
+  <div class="dlg-body">
+    <div class="blk"><div class="lbl">Contexto</div><p>Pesquisa internacional encomendada por uma grande plataforma de vídeos para entender o comportamento, as motivações e as barreiras de potenciais criadores de vídeos curtos, comparando também com o uso de plataformas concorrentes. Foi um projeto multi-país: as pesquisas em outros países, como a Índia, foram conduzidas por times locais, e o nosso time ficou responsável pela frente brasileira.</p></div>
+    <div class="blk"><div class="lbl">Meu papel</div><p>Atuei na frente remota do projeto. Participei da construção do roteiro do diário de uso e da estruturação do sistema de controle de recebimento dos diários, além de conduzir a operação da coleta: envio de formulários e tarefas aos participantes, recebimento e organização das respostas, corte e edição dos vídeos coletados, anonimização e tradução de materiais.</p></div>
+    <div class="blk"><div class="lbl">Processo</div><ul>
+      <li>Recrutamento segmentado por "perfil extremo" de experiência como criador.</li>
+      <li><strong>Diário de uso</strong> em múltiplas fases, acompanhando participantes brasileiros por semanas (frente em que atuei diretamente).</li>
+      <li>Coleta multimídia: formulários, vídeos selfie e gravações de tela, organizados por trackers de controle.</li>
+      <li>Etapa presencial complementar (entrevistas 1:1, focus group, in-homes), conduzida por outra frente do time.</li>
+      <li>Organização e padronização do material do diário para a entrega ao cliente.</li>
+    </ul></div>
+    <div class="blk"><div class="lbl">Metodologia aplicada</div><div class="chips"><span>Diary study longitudinal</span><span>Pesquisa remota</span><span>Triangulação de métodos</span><span>Gestão de operação de pesquisa em escala</span></div></div>
+    <div class="blk"><div class="lbl">Resultado</div><p>Em vez de um relatório de conclusões fechado, a entrega foi o próprio material sintetizado do diário: vídeos dos participantes ao longo das semanas e suas respostas no dia a dia, servindo como insumo vivo para o time de produto do cliente entender a jornada de espectador a criador.</p></div>
+    <div class="nda">🔒 Cliente anonimizado por confidencialidade.</div>
+  </div>
+</dialog>
+
+<dialog id="d-rh" aria-labelledby="d-rh-t">
+  <div class="dlg-head">
+    <button class="dlg-close" type="button" aria-label="Fechar">×</button>
+    <div class="client">Fintech de grande porte</div>
+    <h3 class="display" id="d-rh-t">Experiência digital de RH</h3>
+  </div>
+  <div class="dlg-body">
+    <div class="blk"><div class="lbl">Contexto</div><p>Uma fintech de grande porte queria entender como estruturar melhor a experiência digital da jornada de RH ("People") para seus colaboradores. Me envolvi em um projeto ponta a ponta de pesquisa e proposta de solução.</p></div>
+    <div class="blk"><div class="lbl">Meu papel</div><p>Participei do projeto do discovery à materialização, sendo responsável pela tabulação e síntese dos dados de pesquisa, pelo benchmarking e pela materialização das soluções (fluxos, conceito de hub, protótipos).</p></div>
+    <div class="blk"><div class="lbl">Processo</div><ol>
+      <li><strong>Discovery e benchmarking:</strong> entrevistas em profundidade com profissionais de RH e colaboradores de outras empresas; tabulação e organização dos dados coletados.</li>
+      <li><strong>Síntese:</strong> consolidação dos achados em uma matriz comparativa de maturidade, identificando padrões de dor recorrentes entre as empresas.</li>
+      <li><strong>Materialização:</strong> tradução dos aprendizados em soluções: redesenho de fluxos críticos, conceito de um ambiente centralizado (hub) modular por perfil de usuário, exploração de identidade visual/naming, diretrizes de teste de usabilidade e um índice de acompanhamento de saúde das ferramentas.</li>
+    </ol></div>
+    <div class="blk"><div class="lbl">Metodologia aplicada</div><div class="chips"><span>Entrevistas segmentadas por perfil</span><span>Benchmarking qualitativo multi-empresa</span><span>Codificação temática</span><span>Matriz de maturidade comparativa</span><span>Discovery → materialização</span></div></div>
+    <div class="blk"><div class="lbl">Decisões-chave</div><p>Priorização dos fluxos que geravam mais atrito para redesenho, e proposta de um hub unificado, em vez de ferramentas dispersas, porque a pesquisa mostrou que ambientes centralizados e com marca própria geram melhor percepção de experiência.</p></div>
+    <div class="blk"><div class="lbl">Resultado</div><p>Entrega de protótipos navegáveis, documentação de arquitetura e diretrizes que serviram de base para decisões de produto do time interno.</p></div>
+    <div class="nda">🔒 Concorrentes analisados e dados de entrevistados anonimizados por confidencialidade.</div>
+  </div>
+</dialog>
+
+<dialog id="d-market" aria-labelledby="d-market-t">
+  <div class="dlg-head">
+    <button class="dlg-close" type="button" aria-label="Fechar">×</button>
+    <div class="client">Fintech de grande porte</div>
+    <h3 class="display" id="d-market-t">Benchmarking de marketplace e fidelidade</h3>
+  </div>
+  <div class="dlg-body">
+    <div class="blk"><div class="lbl">Contexto</div><p>Projeto solicitado pela área de Consumer Insights de uma fintech de grande porte, com o objetivo de comparar a estratégia do marketplace e do programa de recompensas da empresa com a de outros grandes players do mercado financeiro brasileiro, gerando insights para o planejamento estratégico do ano seguinte.</p></div>
+    <div class="blk"><div class="lbl">Meu papel</div><p>Atuei em todas as etapas do projeto, desde a definição dos parâmetros de análise, passando pelo desk research e mapeamento da jornada dos concorrentes, até a consolidação do relatório final com recomendações estratégicas.</p></div>
+    <div class="blk"><div class="lbl">Processo</div><ul>
+      <li>Desk research aprofundado sobre o ambiente digital de concorrentes de diferentes perfis (bancos digitais, corretoras, varejo, programas de fidelidade).</li>
+      <li>Mapeamento da jornada de compra em cada um dos concorrentes analisados.</li>
+      <li>Análise estruturada por parâmetros: proposta de valor, benefícios, programas de fidelidade, comunicação e reputação.</li>
+      <li>Elaboração de relatório completo com resumo executivo e recomendações estratégicas.</li>
+    </ul></div>
+    <div class="blk"><div class="lbl">Metodologia aplicada</div><div class="chips"><span>Framework de análise próprio</span><span>Mapeamento de jornada do consumidor</span><span>Análise comparativa em escala</span></div></div>
+    <div class="blk"><div class="lbl">Resultado</div><p>Relatório executivo que serviu de base para decisões estratégicas da área de rewards/mercado do cliente.</p></div>
+    <div class="nda">🔒 Concorrentes analisados anonimizados por confidencialidade.</div>
+  </div>
+</dialog>
+
+<dialog id="d-telecom" aria-labelledby="d-telecom-t">
+  <div class="dlg-head">
+    <button class="dlg-close" type="button" aria-label="Fechar">×</button>
+    <div class="client">Operadora de telecom</div>
+    <h3 class="display" id="d-telecom-t">Teste de usabilidade do redesign de um app</h3>
+  </div>
+  <div class="dlg-body">
+    <div class="blk"><div class="lbl">Contexto</div><p>Um app de telecomunicações passou por um redesign completo e precisava validar a experiência antes do lançamento.</p></div>
+    <div class="blk"><div class="lbl">Meu papel</div><p>Apoiei o time de pesquisa dando suporte ao entrevistador/moderador durante os testes, e fui responsável pela tabulação dos resultados e pela construção do relatório de entrega.</p></div>
+    <div class="blk"><div class="lbl">Metodologia aplicada</div><div class="chips"><span>Teste de usabilidade moderado presencial</span><span>Amostra controlada</span><span>Teste A/B integrado</span><span>Métricas quali + quanti</span><span>Classificação de problemas por categoria</span></div></div>
+    <div class="blk"><div class="lbl">Resultado</div><p>Relatório com painel de desempenho por tarefa e recomendações organizadas por categoria de problema, entregue para orientar ajustes no redesign. O lançamento não ocorreu por decisão interna do cliente, não relacionada aos achados do teste.</p></div>
+    <div class="nda">🔒 Cliente e telas anonimizados por confidencialidade.</div>
+  </div>
+</dialog>
+
+<!-- CONTATO -->
+<section class="contact" id="contato">
+  <span class="ast a4" aria-hidden="true"><svg><use href="#asterisk"/></svg></span>
+  <span class="ast a5 spin-slow" aria-hidden="true"><svg><use href="#asterisk"/></svg></span>
+  <div class="wrap">
+    <h2 class="hand hand-title reveal">vamos trabalhar juntos!</h2>
+    <div class="planner-wrap reveal">
+      <a class="planner-tab" href="mailto:carol.r.araujo66@gmail.com">Me chame ✉</a>
+      <div class="planner">
+        <div class="strip solo" aria-hidden="true">
+          <div class="ph"><img src="foto.jpg" alt=""></div>
+        </div>
+        <div class="note"><span>vamos<br>conversar!</span></div>
+        <span class="monogram" aria-hidden="true">C</span>
+      </div>
+    </div>
+    <p class="links">ou me encontre no <a href="https://www.linkedin.com/in/anacarolineuxui/" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:carol.r.araujo66@gmail.com">carol.r.araujo66@gmail.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Carol Rodrigues</span>
+    <svg aria-hidden="true"><use href="#asterisk"/></svg>
+    <span class="r">Feito à mão em São Paulo</span>
+  </div>
+</footer>
+
+<script>
+  // Abrir / fechar cases
+  document.querySelectorAll('[data-open]').forEach(function (btn) {
+    btn.addEventListener('click', function () { document.getElementById(btn.dataset.open).showModal(); });
+  });
+  document.querySelectorAll('dialog').forEach(function (dlg) {
+    dlg.querySelector('.dlg-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+  });
+
+  // Entrada suave ao rolar
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    // Círculo desenhado à mão no item do menu da seção atual
+    var links = {};
+    document.querySelectorAll('.nav-links a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          Object.values(links).forEach(function (a) { a.classList.remove('active'); });
+          var id = e.target.id === 'experiencia' ? 'sobre' : e.target.id;
+          if (links[id]) links[id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    ['sobre', 'experiencia', 'trabalhos', 'contato'].forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+</script>
+</body>
+</html>
