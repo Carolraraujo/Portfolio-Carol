@@ -316,3 +316,10 @@ img{display:block;max-width:100%}
   .shots figure{width:62vw}
   .shot{width:34%;border-width:4px;border-radius:16px}
 }
+
+/* aviso de confidencialidade */
+.priv-badge{position:absolute;z-index:3;top:16px;left:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(17,17,17,.82);color:#fff;font-size:13px;padding:7px 13px;border-radius:999px;backdrop-filter:blur(6px)}
+.priv{display:flex;gap:16px;align-items:flex-start;margin-top:20px;padding:22px 26px;border-radius:var(--radius);background:var(--accent-soft);border:1px solid #f3c6d4;color:var(--ink)}
+.priv svg{flex:none;color:var(--accent);margin-top:2px;width:22px;height:22px}
+.priv strong{display:block;font-weight:600;font-size:16px;margin-bottom:4px}
+.priv p{color:var(--ink-2);font-size:15.5px;line-height:1.5;max-width:70ch}
