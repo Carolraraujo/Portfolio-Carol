@@ -269,7 +269,7 @@ img{display:block;max-width:100%}
   .nav .wrap{height:64px}
   .hero{padding:72px 0 80px}
   .section,.links-sec{padding:80px 0}
-  .case-visual{aspect-ratio:4/3}
+  .case-visual,.cs-visual{aspect-ratio:4/3}
   .phone.side,.phone.side2{display:none}
   .phone{width:150px}
   .job{grid-template-columns:1fr}
@@ -293,3 +293,26 @@ img{display:block;max-width:100%}
 .vis-d .flow li{background:rgba(255,255,255,.92)}
 .vis-c .flow-lbl,.vis-e .flow-lbl{color:var(--ink)}
 @media (max-width:600px){.flow{width:88%}.flow li{padding:9px 12px}.flow ol{gap:7px}}
+
+/* telas reais (Claro Flex Turista) */
+.vis-shots{background:linear-gradient(150deg,#fbe3ea 0%,#f3f2ef 70%);overflow:hidden}
+.shot{position:absolute;width:clamp(120px,19%,230px);border-radius:22px;border:6px solid #111;box-shadow:0 30px 60px rgba(0,0,0,.25);background:#fff}
+.shot.s2{z-index:2;left:50%;top:10%;transform:translateX(-50%)}
+.shot.s1{left:50%;top:18%;transform:translateX(-140%) rotate(-6deg)}
+.shot.s3{left:50%;top:18%;transform:translateX(40%) rotate(6deg)}
+.gallery{padding:70px 0 30px;border-top:1px solid var(--line)}
+.gallery .h2{margin-bottom:40px}
+.stage{margin-bottom:56px}
+.stage-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:20px}
+.stage-n{font-size:14px;font-weight:600;color:var(--accent);padding-top:5px}
+.stage h3{font-weight:500;font-size:clamp(22px,2vw,26px);letter-spacing:-.02em}
+.stage p{color:var(--muted);font-size:15px;max-width:56ch}
+.shots{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-inline:max(40px,calc((100vw - var(--wrap))/2 + 40px));padding:6px max(40px,calc((100vw - var(--wrap))/2 + 40px)) 18px;scrollbar-width:thin}
+.shots figure{flex:none;width:clamp(170px,18vw,230px);scroll-snap-align:start}
+.shots img{width:100%;height:auto;aspect-ratio:9/16.6;object-fit:cover;object-position:top;border-radius:18px;border:1px solid var(--line);background:#fff;box-shadow:0 14px 30px rgba(0,0,0,.06)}
+.shots figcaption{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.35}
+@media (max-width:600px){
+  .shots{padding:6px 16px 16px;gap:14px;scroll-padding-inline:16px}
+  .shots figure{width:62vw}
+  .shot{width:34%;border-width:4px;border-radius:16px}
+}
